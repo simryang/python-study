@@ -3,9 +3,11 @@ import cv2          # pip install opencv-python
 import numpy
 from queue import Queue
 from _thread import *
+from pynput.keyboard import Listener, Key       # pip install pynput
 
 
 enclosure_queue = Queue()
+isExistStatus =False
 
 
 # 쓰레드 함수 
@@ -58,8 +60,8 @@ def webcam(queue):
         
         key = cv2.waitKey(1)
         if key == 27:
+            isExistStatus = True
             break
-
 
 HOST = '127.0.0.1'
 PORT = 9999
