@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UPnPCTT2.0 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <TestRun startTime="2020-05-19T13:18:20.8351051" timespan="00:25:11.5153524" SystemVersion="Windows Vista &amp; above">
+        <DUT>
+            <FriendlyName>server_lite_19231</FriendlyName>
+            <DeviceIdentifier>22795640-0d2e-45dc-bcb1-0da27537b10f</DeviceIdentifier>
+            <Ip>fe80::208:dcff:fe59:fff7%8</Ip>
+            <Port>36746</Port>
+            <Mac>00:08:dc:59:ff:f7</Mac>
+            <Profiler Name="NON_OCF_MFG_ROOT_CA-SKIP" Value="YES" />
+            <Interfaces Name="fe80::208:dcff:fe59:fff7%8" Value="IPv6" />
+            <Services />
+            <Devices />
+            <IsXmppDevice>false</IsXmppDevice>
+            <IsXmppControlPoint>false</IsXmppControlPoint>
+            <IsXmppServer>false</IsXmppServer>
+        </DUT>
+        <TestCase name="CT1.1.1 CoAP-Based Resource Discovery" significance="" startTime="2020-05-19 13:18" timespan="00:03:25.3233841" autoloaded="false">
+            <Result>FAILED</Result>
+            <Scenario>Step 1:   CTT sends a NON multicast discovery request message (i.e. CoAP GET) to "/oic/res" with no query parameters and an Accept Option of "application/vnd.ocf+cbor".
+Step 2: IUT receives the request message and sends a unicast response message to the CTT.
+Step 3: CTT receives the response message(s) and filters out the correct IUT from all responses.
+Step 4: CTT caches the response message from the IUT for later evaluation.
+Step 5: CTT creates a list of supported Resource Types and OCF Interfaces.
+Step 6: Repeat Steps 1 to 4 with an "if" query for all supported OCF Interfaces (i.e. "?if=oic.if.ll" and "?if=oic.if.baseline").
+Step 7: Repeat Steps 1 to 4 with an "rt" query for all Resource Types supported by the IUT (i.e. "?rt=oic.r.switch.binary", "?rt=oic.d.refrigerator", etc.).
+Step 8: Repeat Steps 1 to 4 with an "rt" query for a Resource Type that is not supported by the IUT.
+Step 9: Repeat Steps 1 to 8 sending a CON unicast discovery message instead of a NON multicast discovery message.
+Step 10:        CTT sends a CON unicast discovery request message (i.e. CoAP GET) to any Collections (i.e. Resource Type of "oic.wk.col") contained in /oic/res using an "?if=oic.if.ll" query to discover the Resources contained in them.
+Step 11:        IUT receives the request message and sends a unicast response message to the CTT.
+Step 12:        CTT caches the response message from the IUT for later evaluation.
+Step 13:        If any of the Resources discovered in Step 10 are also a Collection, repeat steps 10 to 12 until all of the Resources within all of the Collections have been discovered.</Scenario>
+            <profileAllowedResults>PASSED</profileAllowedResults>
+            <profileAllowedResults>WARNING</profileAllowedResults>
+            <profileAllowedResults>NA</profileAllowedResults>
+            <Logs>
+                <Log level="INFO" timestamp="13:18:20.9109199">
+                    <message>Test case "CT1.1.1 CoAP-Based Resource Discovery" started</message>
+                </Log>
+                <Log level="INFO" timestamp="13:18:20.9109199">
+                    <message>Timestamp: 2020-05-19 13:18:20. Tool version: 2001.0.0.0</message>
+                </Log>
+                <Log level="DEBUG" timestamp="13:18:20.9119201">
+                    <message>Executing "python" test step</message>
+                </Log>
+                <Log level="DEBUG" timestamp="13:18:20.9119201">
+                    <message>Executing "PYTHON_SCRIPT" action</message>
+                </Log>
+                <Log level="INFO" timestamp="13:18:20.9317948">
+                    <message>Rediscovering IUT...</message>
+                </Log>
+                <Log level="DEBUG" timestamp="13:18:20.9317948">
+                    <message>Try to rediscover device with uuid: 62082960-2e98-42d8-43cd-bd7c455898a7</message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9329554">
+                    <message>CTT Client -&gt; [fe80::68d5:43e0:9fb1:2ead%8]:49728-&gt;[ff02::158]:5683 NON-GET ID=49340, Token=5975D5CB, Options=[URI-Path=oic, res, ContentFormatVersion=1.0.0, AcceptVersion=1.0.0, URI-Query=if=oic.if.baseline, Accept=application/vnd.ocf+cbor], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9369628">
+                    <message>CTT Client &lt;- [fe80::feaa:14ff:fee7:77e5%8]:50523-&gt;[fe80::68d5:43e0:9fb1:2ead%8]:49728 CON-2.05 Content ID=23569, Token=5975D5CB, Options=[ETag=6946703A00000000, ContentFormatVersion=1.0.0, Content-Type=application/vnd.ocf+cbor, Block2=0+ (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9369628">
+                    <message>CTT Client -&gt; [fe80::68d5:43e0:9fb1:2ead%8]:49728-&gt;[fe80::feaa:14ff:fee7:77e5%8]:50523 ACK-Empty Message ID=23569, Token=, Options=[], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9379510">
+                    <message>CTT Client -&gt; [fe80::68d5:43e0:9fb1:2ead%8]:49728-&gt;[fe80::feaa:14ff:fee7:77e5%8]:50523 CON-GET ID=49341, Token=5975D5CB, Options=[URI-Path=oic, res, ContentFormatVersion=1.0.0, AcceptVersion=1.0.0, URI-Query=if=oic.if.baseline, Accept=application/vnd.ocf+cbor, Block2=1 (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9379510">
+                    <message>CTT Client &lt;- [fe80::208:dcff:fe59:fff7%8]:36746-&gt;[fe80::68d5:43e0:9fb1:2ead%8]:49728 CON-2.05 Content ID=2935, Token=5975D5CB, Options=[ETag=13587BA400000000, ContentFormatVersion=1.0.0, Content-Type=application/vnd.ocf+cbor, Block2=0+ (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9379510">
+                    <message>CTT Client -&gt; [fe80::68d5:43e0:9fb1:2ead%8]:49728-&gt;[fe80::208:dcff:fe59:fff7%8]:36746 ACK-Empty Message ID=2935, Token=, Options=[], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9379510">
+                    <message>CTT Client -&gt; [fe80::68d5:43e0:9fb1:2ead%8]:49728-&gt;[fe80::208:dcff:fe59:fff7%8]:36746 CON-GET ID=49342, Token=5975D5CB, Options=[URI-Path=oic, res, ContentFormatVersion=1.0.0, AcceptVersion=1.0.0, URI-Query=if=oic.if.baseline, Accept=application/vnd.ocf+cbor, Block2=1 (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9399634">
+                    <message>CTT Client &lt;- [fe80::feaa:14ff:fee7:77e5%8]:50523-&gt;[fe80::68d5:43e0:9fb1:2ead%8]:49728 ACK-2.05 Content ID=49341, Token=5975D5CB, Options=[ETag=6946703A00000000, ContentFormatVersion=1.0.0, Content-Type=application/vnd.ocf+cbor, Block2=1+ (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9399634">
+                    <message>CTT Client -&gt; [fe80::68d5:43e0:9fb1:2ead%8]:49728-&gt;[fe80::feaa:14ff:fee7:77e5%8]:50523 CON-GET ID=49343, Token=5975D5CB, Options=[URI-Path=oic, res, ContentFormatVersion=1.0.0, AcceptVersion=1.0.0, URI-Query=if=oic.if.baseline, Accept=application/vnd.ocf+cbor, Block2=2 (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9409517">
+                    <message>CTT Client &lt;- [fe80::3c91:a23:92f:b176%8]:49860-&gt;[fe80::68d5:43e0:9fb1:2ead%8]:49728 CON-2.05 Content ID=50418, Token=5975D5CB, Options=[ETag=3B4E4A3A00000000, ContentFormatVersion=1.0.0, Content-Type=application/vnd.ocf+cbor, Block2=0+ (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9409517">
+                    <message>CTT Client -&gt; [fe80::68d5:43e0:9fb1:2ead%8]:49728-&gt;[fe80::3c91:a23:92f:b176%8]:49860 ACK-Empty Message ID=50418, Token=, Options=[], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9419519">
+                    <message>CTT Client -&gt; [fe80::68d5:43e0:9fb1:2ead%8]:49728-&gt;[fe80::3c91:a23:92f:b176%8]:49860 CON-GET ID=49344, Token=5975D5CB, Options=[URI-Path=oic, res, ContentFormatVersion=1.0.0, AcceptVersion=1.0.0, URI-Query=if=oic.if.baseline, Accept=application/vnd.ocf+cbor, Block2=1 (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9419519">
+                    <message>CTT Client &lt;- [fe80::208:dcff:fe59:fff7%8]:36746-&gt;[fe80::68d5:43e0:9fb1:2ead%8]:49728 ACK-2.05 Content ID=49342, Token=5975D5CB, Options=[ETag=13587BA400000000, ContentFormatVersion=1.0.0, Content-Type=application/vnd.ocf+cbor, Block2=1+ (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9419519">
+                    <message>CTT Client -&gt; [fe80::68d5:43e0:9fb1:2ead%8]:49728-&gt;[fe80::208:dcff:fe59:fff7%8]:36746 CON-GET ID=49345, Token=5975D5CB, Options=[URI-Path=oic, res, ContentFormatVersion=1.0.0, AcceptVersion=1.0.0, URI-Query=if=oic.if.baseline, Accept=application/vnd.ocf+cbor, Block2=2 (1024B/block [6])], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9459609">
+                    <message>CTT Client &lt;- [fe80::feaa:14ff:fee7:77e5%8]:50523-&gt;[fe80::68d5:43e0:9fb1:2ead%8]:49728 ACK-Empty Message ID=49343, Token=, Options=[], </message>
+                </Log>
+                <Log level="VERBOSE" timestamp="13:18:20.9459609">
+                    <message>CTT Client &lt;- [fe80::feaa:14ff:fee7:77e5%8]:50523-&gt;[fe80::68d5:43e0:9fb1:2ead%8]:49728 CON-2.05 Content ID=23571, Token=5975D5CB, Options=[ETag=6946703A00000000, ContentFormatVersion=1.0.0, AcceptVersion=1.0.0, Content-Type=application/v
