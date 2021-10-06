@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
 # TeraCopy 내부의 모든 윈도우 객체를 나열합니다.
-from win32 import win32gui
-import pywintypes
+#from win32 import win32gui
+import win32gui
+#import pywintypes
 import sys
  
 # 부모 윈도우의 핸들을 검사합니다.
