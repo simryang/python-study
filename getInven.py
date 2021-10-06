@@ -8,14 +8,14 @@ import datetime
 
 ### 1단계
 
-url = "http://maple.inven.co.kr"
+url = "https://dho.inven.co.kr/dataninfo2/item/"
 html_contents = requests.get(url).text
 
-
+print(html_contents)
 ### 2단계
 
 soup = BeautifulSoup(html_contents, "html5lib")
-data1 = soup.find_all("ul", class_="list_txt board0")
+data1 = soup.find_all("td", class_="itemname")
 
 save_title = []
 for title in data1[1].find_all("span", class_="subject-text"):
